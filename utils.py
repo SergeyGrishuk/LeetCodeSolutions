@@ -3,6 +3,23 @@
 from typing import List, Optional
 
 
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def build_linked_list(l: Lint[int]) -> Optional[ListNode]:
+    runner = ListNode(0)
+    head = runner
+
+    for i in l:
+        runner.next = ListNode(i)
+        runner = runner.next
+
+    return head.next
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
